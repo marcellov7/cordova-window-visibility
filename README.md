@@ -1,0 +1,1 @@
+# cordova-window-visibility
