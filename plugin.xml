@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-window-visibility"
+        version="1.0.0">
+    <name>Window Visibility Plugin</name>
+    <description>Cordova plugin to keep the window visible in background</description>
+    <license>MIT</license>
+    <keywords>cordova,window,visibility,background</keywords>
+    
+    <js-module src="www/windowVisibility.js" name="windowVisibility">
+        <clobbers target="cordova.plugins.windowVisibility" />
+    </js-module>
+    
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WindowVisibility">
+                <param name="android-package" value="com.example.WindowVisibilityPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/WindowVisibilityPlugin.java" target-dir="src/com/example" />
+        <source-file src="src/android/CustomWebView.java" target-dir="src/com/example" />
+    </platform>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="WindowVisibility">
+                <param name="ios-package" value="CDVWindowVisibility" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/CDVWindowVisibility.m" />
+        <header-file src="src/ios/CDVWindowVisibility.h" />
+    </platform>
+</plugin>

@@ -1,0 +1,23 @@
+{
+    "name": "cordova-window-visibility",
+    "version": "1.0.0",
+    "description": "Cordova plugin to keep the window visible in background",
+    "cordova": {
+      "id": "cordova-window-visibility",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "keywords": [
+      "ecosystem:cordova",
+      "cordova-android",
+      "cordova-ios",
+      "cordova",
+      "window",
+      "visibility",
+      "background"
+    ],
+    "author": "marcellov7",
+    "license": "MIT"
+  }
