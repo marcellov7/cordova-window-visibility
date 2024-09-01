@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-window-visibility"
+        id="cordova-plugin-window-visibility"
         version="1.0.0">
     <name>Window Visibility Plugin</name>
     <description>Cordova plugin to keep the window visible in background</description>
@@ -17,13 +17,16 @@
                 <param name="android-package" value="com.example.WindowVisibilityPlugin"/>
             </feature>
         </config-file>
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="webView" value="com.example.CustomWebViewEngine" />
+        </config-file>
+        
         <source-file src="src/android/WindowVisibilityPlugin.java" target-dir="src/com/example" />
         <source-file src="src/android/CustomWebView.java" target-dir="src/com/example" />
         <source-file src="src/android/CustomWebViewEngine.java" target-dir="src/com/example" />
         
-        <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="webview" value="com.example.CustomWebViewEngine" />
-        </config-file>
+        <framework src="com.android.support:support-v4:+" />
     </platform>
     
     <platform name="ios">
