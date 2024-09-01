@@ -18,7 +18,7 @@ public class WindowVisibilityPlugin extends CordovaPlugin {
     private void enable(CallbackContext callbackContext) {
         cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
-                webView.getView().setCustomWebView();
+                // La CustomWebView è già in uso grazie alla configurazione nel plugin.xml
                 callbackContext.success();
             }
         });
