@@ -21,14 +21,4 @@
         
         <source-file src="src/android/WindowVisibilityPlugin.java" target-dir="src/com/example" />
     </platform>
-
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="WindowVisibility">
-                <param name="ios-package" value="CDVWindowVisibility" />
-            </feature>
-        </config-file>
-        <header-file src="src/ios/CDVWindowVisibility.h" />
-        <source-file src="src/ios/CDVWindowVisibility.m" />
-    </platform>
 </plugin>
