@@ -15,27 +15,20 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="WindowVisibility">
                 <param name="android-package" value="com.example.WindowVisibilityPlugin"/>
+                <param name="onload" value="true"/>
             </feature>
         </config-file>
         
-        <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="webView" value="com.example.CustomWebViewEngine" />
-        </config-file>
-        
         <source-file src="src/android/WindowVisibilityPlugin.java" target-dir="src/com/example" />
-        <source-file src="src/android/CustomWebView.java" target-dir="src/com/example" />
-        <source-file src="src/android/CustomWebViewEngine.java" target-dir="src/com/example" />
-        
-        <framework src="com.android.support:support-v4:+" />
     </platform>
-    
+
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="WindowVisibility">
                 <param name="ios-package" value="CDVWindowVisibility" />
             </feature>
         </config-file>
-        <source-file src="src/ios/CDVWindowVisibility.m" />
         <header-file src="src/ios/CDVWindowVisibility.h" />
+        <source-file src="src/ios/CDVWindowVisibility.m" />
     </platform>
 </plugin>
