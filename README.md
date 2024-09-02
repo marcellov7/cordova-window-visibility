@@ -5,7 +5,7 @@ This Cordova plugin keeps the window visible even when the app is in the backgro
 ## Installation
 
 ```
-cordova plugin add https://github.com/your-username/cordova-plugin-window-visibility.git
+cordova plugin add https://github.com/marcellov7/cordova-window-visibility.git
 ```
 
 Or if you've published it to npm:
@@ -58,7 +58,7 @@ On Android, the plugin overrides the `onStop` method of the Cordova activity. Wh
 
 ## License
 
-MIT
+Apache 2.0
 
 ## Contributing
 
