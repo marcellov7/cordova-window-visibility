@@ -17,7 +17,7 @@ cordova plugin add cordova-plugin-window-visibility
 You can also specify a custom visibility delay during installation:
 
 ```
-cordova plugin add cordova-plugin-window-visibility --variable VISIBILITY_DELAY=2000
+cordova plugin add cordova-window-visibility --variable VISIBILITY_DELAY=2000
 ```
 
 ## Usage
