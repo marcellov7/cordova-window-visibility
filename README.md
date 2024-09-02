@@ -14,9 +14,17 @@ Or if you've published it to npm:
 cordova plugin add cordova-plugin-window-visibility
 ```
 
+You can also specify a custom visibility delay during installation:
+
+```
+cordova plugin add cordova-plugin-window-visibility --variable VISIBILITY_DELAY=2000
+```
+
 ## Usage
 
-The plugin is automatically initialized and active once installed. However, if you want to manually enable it or receive a confirmation, you can use the following method:
+The plugin is automatically initialized and active once installed. However, you can use the following methods:
+
+### Enable Window Visibility
 
 ```javascript
 cordova.plugins.windowVisibility.enable(
@@ -24,6 +32,21 @@ cordova.plugins.windowVisibility.enable(
     function(error) { console.error('Error enabling window visibility:', error); }
 );
 ```
+
+### Set Visibility Delay
+
+You can change the visibility delay at runtime:
+
+```javascript
+cordova.plugins.windowVisibility.setDelay(3000,
+    function(success) { console.log('Delay set:', success); },
+    function(error) { console.error('Error setting delay:', error); }
+);
+```
+
+## Configuration
+
+- `VISIBILITY_DELAY`: The delay (in milliseconds) before the window is made visible after the app goes to the background. Default is 1000ms.
 
 ## Supported Platforms
 
