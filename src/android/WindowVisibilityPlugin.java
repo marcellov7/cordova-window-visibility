@@ -52,8 +52,23 @@ public class WindowVisibilityPlugin extends CordovaPlugin {
             public void run() {
                 try {
                     Thread.sleep(visibilityDelay);
-                    webView.getEngine().getView().dispatchWindowVisibilityChanged(View.VISIBLE);
-                } catch (InterruptedException e) {
+                    // The engine may already be destroyed if the app was closed
+                    // while we were sleeping: guard against NPE and touch the
+                    // View on the main thread only.
+                    org.apache.cordova.CordovaWebViewEngine engine = (webView != null) ? webView.getEngine() : null;
+                    final View view = (engine != null) ? engine.getView() : null;
+                    if (view != null) {
+                        view.post(new Runnable() {
+                            public void run() {
+                                try {
+                                    view.dispatchWindowVisibilityChanged(View.VISIBLE);
+                                } catch (Exception e) {
+                                    // WebView already destroyed: ignore
+                                }
+                            }
+                        });
+                    }
+                } catch (Exception e) {
                     // do nothing
                 }
             }
